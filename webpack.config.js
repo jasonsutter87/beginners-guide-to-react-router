@@ -1,7 +1,8 @@
+const path = require('path');
 module.exports = {
   entry: './app/main.js',
   output: {
-    path: './app',
+    path:  path.resolve(__dirname, 'app'),
     filename: 'bundle.js'
   },
   devServer: {
@@ -14,7 +15,7 @@ module.exports = {
       {
         test: /\.js$/,
         exclude: /node_modules/,
-        loader: 'babel'
+        loader: 'babel-loader'
       }
     ]
   }
